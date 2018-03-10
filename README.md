@@ -46,9 +46,9 @@ Subsequent updates may follow as needed.
  * Removes letters mixed with numbers
  * Removes fractions in addresses
  * Adds a number to single digit addresses (as in 7th ave * 07th Ave)
- * Transforms BAYSHORE BLVD * BAY SHORE BLVD
+ * Transforms BAYSHORE BLVD  --> BAY SHORE BLVD
  * Handles Embarcadero Center Transformations as:
-      - 1 embarcadero center * 301 CLAY ST
+      - 1 embarcadero center --> 301 CLAY ST
       - 2 embarcadero center –-> 201 CLAY ST
       - 3 embarcadero center –-> 101 CLAY ST
       - 4 embarcadero center –-> 150 DRUMM ST
@@ -83,7 +83,7 @@ Stores dictionary that reads excel columns as numbers and function that looks fo
 
 ### Installing
 
-No instalation required.
+No installation required.
 
 ## Authors
 
