@@ -1,55 +1,5 @@
 # -*- coding: utf-8 -*-
 
-#IMPERFECT ADDRESSES
-#
-#Description: This script standardizes addresses provided in an excel workbook
-#Last Modified: 01/26/2018
-###############################################################################
-
-
-#FUNCTIONALITY:
-#
-# 1. Tranformations:
-#
-# --> Address types are abbreviated, following the standards found here:
-#     https://data.sfgov.org/Geographic-Locations-and-Boundaries/Street-Names/6d9h-4u5v/data
-# --> Everything to the right of an address type is wiped out (as in
-#     "123 1st street, #Apt 345"  --> "123 1st st"
-# --> Apostrophes are removed and leave no whitespace in between characters
-# --> Ranges (as in "517-520 1st Street") are eliminated. Only the first
-# number in the range must is kept
-# --> No fractions in addresses (as in 10/2 Market Street)
-# --> Streets and avenues from 1-9 must have a "0" added to the left (as in
-# 7th street --> 07th street
-# --> Cardinal directions are kept to the right of the address type in 13
-# cases.
-#
-#
-# 2. Processes:
-#
-# --> Book to be transformed is loaded as object "wb"
-# --> Output book is created as object "wb2"
-# --> Active sheet is stored to object "ws"
-# --> First column is copied and pasted into the second column of "ws"
-# --> Abbreviates addressees and wipes out characters to the right of
-#     address type
-# --> Makes sure that cardinal directions are kept (as in 123 1st NE)
-# --> Remove apostrophes, periods, octothorpe and commas
-# --> Removes ranges
-# --> Removes letters mixed with numbers
-# --> Removes fractions in addresses
-# --> Adds a number to single digit addresses (as in 7th ave --> 07th Ave)
-# --> Transforms BAYSHORE BLVD --> BAY SHORE BLVD
-# --> Handles Embarcadero Center Transformations as:
-#-------------1 embarcadero center --> 301 CLAY ST
-#-------------2 embarcadero center –-> 201 CLAY ST
-#-------------3 embarcadero center –-> 101 CLAY ST
-#-------------4 embarcadero center –-> 150 DRUMM ST
-# --> Handles addresses commonly entered without address type
-# --> Writes new header for column with value addresses
-# --> Saves workbook changes
-
-
 import openpyxl
 from openpyxl.utils import get_column_letter
 import re
